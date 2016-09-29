@@ -116,7 +116,7 @@ for strCurrentBlogPostID in arrBlogPost :
   strHTML4Post = "<html>\n<head>\n<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />\n<title>" + strBlogPostTitle + "</title>\n<link href=""http://simg.sinajs.cn/blog7style/css/conf/blog/article.css"" type=""text/css"" rel=""stylesheet"" />\n</head>\n<body>\n<h2>" + strBlogPostTitle + "</h2>\n<p>By: <em>" + strBlogName + "</em> 原文发布于：<em>" + strBlogPostTime + "</em></p>\n" + strBlogPostBody + "\n<p><a href=""index.html"">返回目录</a></p>\n</body>\n</html>"
   objFileArticle = open(strLocalFilename, "w")
   objFileArticle.write(strHTML4Post);
-  objFileArticle.close
+  objFileArticle.close()
 
   strHTML4Index = strHTML4Index + '<li><a href="' + strLocalFilename + '">' + strBlogPostTitle + '</a></li>\n'
 
@@ -126,4 +126,4 @@ strCurrentTimestamp = str(strftime("%Y-%m-%d %H:%M:%S"))
 strHTML4Index = "<html>\n<head>\n<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />\n<title>" + strBlogName + "博客文章汇总</title>\n</head>\n<body>\n<h2>新浪博客：" + strBlogName + "</h2>\n<p>共" + str(intBlogPostCount) + "篇文章，最后更新：<em>" + strCurrentTimestamp + "</em></p>\n<ol>\n" + strHTML4Index + "\n</ol>\n</body>\n</html>"
 objFileIndex = open("index.html", "w")
 objFileIndex.write(strHTML4Index);
-objFileIndex.close
+objFileIndex.close()
